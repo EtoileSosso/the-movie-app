@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDark"
+        tools:context=".ui.trending.TrendingFragment">
+
+        <include
+            android:id="@+id/trending_movies"
+            layout="@layout/trending_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titlerow="@{@string/top_movies}" />
+
+        <include
+            android:id="@+id/trending_people"
+            layout="@layout/trending_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/trending_movies"
+            app:titlerow="@{@string/top_actors}" />
+
+        <include
+            android:id="@+id/trending_categories"
+            layout="@layout/trending_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/trending_people"
+            app:titlerow="@{@string/top_genres}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

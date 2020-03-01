@@ -22,7 +22,7 @@ class HomeSecondFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_second, container, false)
+        return inflater.inflate(R.layout.home_second_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

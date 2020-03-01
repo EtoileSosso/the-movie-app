@@ -26,7 +26,7 @@ val dataModule = module {
             dao = get()
         )
     }
-    single() {
+    single {
         Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(get(named("BASE_URL")) as String)
@@ -86,7 +86,6 @@ private object NetworkXConfig {
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .build()
-
     }
 }
 
@@ -122,6 +121,7 @@ class BasicInterceptor(
         val url = original.url
             .newBuilder()
             .addQueryParameter("api_key", apiKey)
+            .addQueryParameter("language", Locale.getDefault().language)
             .build()
 
         // Request customization: add request headers

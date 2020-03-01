@@ -19,7 +19,7 @@ import org.koin.android.ext.android.inject
  */
 class MainActivity : AppCompatActivity() {
 
-    val repository: MovieRepository by inject()
+    private val repository: MovieRepository by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +40,9 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         //Charger les éléments principaux de la bottom bar
         val appBarConfiguration = AppBarConfiguration(
-                setOf(
-                        R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-                )
+            setOf(
+                R.id.navigation_home, R.id.navigation_trending, R.id.navigation_notifications
+            )
         )
         //Indiquer les éléments principaux de la bottom bar
         setupActionBarWithNavController(navController, appBarConfiguration)

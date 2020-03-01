@@ -14,7 +14,6 @@ internal data class TokenResponse(
     val expiresAt: String? = null,
     @SerializedName("request_token")
     val requestToken: String? = null,
-    @SerializedName("success")
     val success: Boolean? = null
 )
 
